@@ -44,10 +44,10 @@ The starter code has migrations and models for the initial `Cohort` and `Student
 | email       | String    |
 
 #### `cohorts` Table
-| Column     | Type      |
-| -----------| --------- |
-| name       | String    |
-| current_mod       | Integer    |
+| Column            | Type      |
+| ------------------| --------- |
+| name              | String    |
+| current_mod       | Integer   |
 
 You will need to create a migration to establish the relationship between these two tables. You'll need to add one additional column to one of these existing tables to create the relationship. **Remember**: a `Cohort` has many `Student`s and a `Student` belongs to a `Cohort`.
 
@@ -65,7 +65,6 @@ Before working on the rest of the deliverables, you will need to create a migrat
 
 - A `Student` belongs to a `Cohort`. Create a migration to update your existing tables to reflect this relationship.
 
-TODO: move this after object relationship methods?
 After creating the migration file and migrating, use the `seeds.rb` file to create instances of `Student`s and `Cohort`s to so you can test your relationships.
 
 **Once you've successfully created the migration**, work on building out the following deliverables. Use Active Record association macros and Active Record query methods where appropriate.
@@ -97,6 +96,8 @@ After creating the migration file and migrating, use the `seeds.rb` file to crea
   - returns the total number of students in the cohort as an `Integer`
 - `Cohort.biggest`
   - returns a `Cohort` instance for the cohort with the most students
+- `Cohort.sort_by_mod`
+  - returns all cohorts, sorted by `current_mod` from lowest to highest
 
 ## Rubric
 
