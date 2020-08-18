@@ -4,33 +4,29 @@ Student.destroy_all
 
 # This will create 5 cohorts using a random date
 puts "Seeding cohorts..."
-5.times do
-  date = Faker::Date.forward(years: 1)
-  name = "nyc-dumbo-web-#{date.strftime("%m%d%Y")}"
-  
-  Cohort.create(
-    name: name,
-    current_mod: rand(1..5)
-  )
-end
+c1 = Cohort.create(
+  name: "nyc-dumbo-web-#{Faker::Date.forward(years: 1).strftime("%m%d%Y")}",
+  current_mod: rand(1..5)
+)
+c2 = Cohort.create(
+  name: "nyc-dumbo-web-#{Faker::Date.forward(years: 1).strftime("%m%d%Y")}",
+  current_mod: rand(1..5)
+)
+c3 = Cohort.create(
+  name: "nyc-dumbo-web-#{Faker::Date.forward(years: 1).strftime("%m%d%Y")}",
+  current_mod: rand(1..5)
+)
+c4 = Cohort.create(
+  name: "nyc-dumbo-web-#{Faker::Date.forward(years: 1).strftime("%m%d%Y")}",
+  current_mod: rand(1..5)
+)
+c5 = Cohort.create(
+  name: "nyc-dumbo-web-#{Faker::Date.forward(years: 1).strftime("%m%d%Y")}",
+  current_mod: rand(1..5)
+)
 
 puts "Seeding students..."
-# For each cohort, we'll create some students
-Cohort.each do |cohort|
-  # this will run a loop a random number of times between 10 and 25
-  rand(10..25).times do
-    # generate a fake name
-    name = Faker::Name.name
-    # generate a fake age
-    age = rand(18..100)
-
-    # **************************************************
-    # * TODO: Create new students using Active Record! *
-    # * Remember, a student belongs to a cohort        *
-    # **************************************************
-    # Create Students Here
-
-  end
-end
+# TODO: create seed data for students
+# check your schema and make sure to create students with all the necessary data
 
 puts "Done!"
