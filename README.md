@@ -34,7 +34,7 @@ Similarly, messy code that works is better than clean code that doesn't. First, 
 
 ## What You Already Have
 
-The starter code has migrations and models for the initial `Cohort` and `Student` models, and seed data for some `Cohort`s and `Student`s. The schema currently looks like this: 
+The starter code has migrations and models for the initial `Cohort` and `Student` models, and seed data for some `Cohort`s and `Student`s. The tables currently look like this: 
 
 #### `students` Table
 | Column      | Type      |
@@ -49,7 +49,9 @@ The starter code has migrations and models for the initial `Cohort` and `Student
 | name       | String    |
 | current_mod       | Integer    |
 
-You will need to create a migration to establish the relationship between these two tables. You'll need to add one additional column to one of these existing tables to create the relationship. **Remember**: a `Cohort` has many `Student`s and a `Student` belongs to a `Cohort`.
+You will need to create a migration to establish the relationship between these two tables. You'll need to add one additional column to one of these existing tables to create the relationship. 
+
+**Remember**: a `Cohort` has many `Student`s and a `Student` belongs to a `Cohort`.
 
 ## Deliverables
 
@@ -61,16 +63,17 @@ Remember: Active Record give your classes access to a lot of built-in methods! K
 
 ### Migrations
 
-Before working on the rest of the deliverables, you will need to create a migration to establish the relationship between a `Student` and a `Cohort`.
+Before working on the rest of the deliverables, you will need to set up the migration files to establish the relationship between a `Student` and a `Cohort`.
 
-- A `Student` belongs to a `Cohort`. Create a migration to update your existing tables to reflect this relationship.
+- A `Student` belongs to a `Cohort`. Update the existing migrations file(s) to reflect this relationship.
 
-TODO: move this after object relationship methods?
-After creating the migration file and migrating, use the `seeds.rb` file to create instances of `Student`s and `Cohort`s to so you can test your relationships.
+Once you've updated the migrations, run `rake db:migrate` to run the migrations and set up the database. Then use the `seeds.rb` file to create instances of `Student`s and `Cohort`s to so you can test your relationships.
 
-**Once you've successfully created the migration**, work on building out the following deliverables. Use Active Record association macros and Active Record query methods where appropriate.
+**Once you've successfully created the migration**, work on building out the following deliverables. 
 
 ### Object Relationship Methods
+
+Use Active Record association macros and Active Record query methods where appropriate (i.e. `has_many`, `has_many through`, and `belongs_to`).
 
 #### Student
 
